@@ -1,4 +1,4 @@
-package com.jdbctemplatepractice.Users;
+package com.jdbctemplatepractice.jdbctemplatepractice.Users;
 
 import java.util.List;
 
@@ -24,10 +24,10 @@ public class UsersService implements UsersRepository {
     }
 
     @Override
-    public int updateUser(UsersEntity user) {
+    public int updateUser(UsersEntity user,int id) {
         return jdbcTemplate.update(
             "UPDATE jdbcpractice SET name=?,last_name=?,age=?,address=?,id_file_credential=? where id=?",
-            user.getName(), user.getLast_name(), user.getAge(), user.getAddress(), user.getId_file_credential());
+            user.getName(), user.getLast_name(), user.getAge(), user.getAddress(), user.getId_file_credential(),id);
     }
 
     @Override

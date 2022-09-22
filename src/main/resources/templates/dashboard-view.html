@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Dashboard</title>
+</head>
+<body>
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Spring boot crud with JDBC</a>
+        </div>
+        <div class="links">
+            <a href="">Cerrar sesión</a>
+        </div>
+    </nav>
+
+     <section class="d-flex flex-column  align-items-center min-vh-100">
+        <header class="h4">List of users in the database</header>
+        <button class="btn btn-primary"><a href="/users/new">New User</a></button>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Last name</th>
+                  <th scope="col">Age</th>
+                  <th scope="col">Address</th>
+                  <th scope="col">Id file credential</th>
+                  <th scope="col">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="usuario : ${listaUsuarios}">
+                    <th th:text="${usuario.getName()}" scope="row"></th>
+                    <td th:text="${usuario.getLast_name()}"></td>
+                    <td th:text="${usuario.getAge()}"></td>
+                    <td th:text="${usuario.getAddress()}"></td>
+                    <td th:text="${usuario.getName()}"></td>
+                    <td th:text="${usuario.getId_file_credential()}"></td>
+                    <td class="d-flex flex-column">
+                        <button class="btn btn-primary">
+                            <a th:href="@{/users/edit/{id}(id=${usuario.id})}">Edit</a>
+                        </button>
+                        <button class="btn btn-danger">
+                            <a th:href="@{/users/delete/{id}(id=${usuario.id})}">Delete</a>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+     </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>

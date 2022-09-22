@@ -1,13 +1,13 @@
-package com.jdbctemplatepractice.Users;
+package com.jdbctemplatepractice.jdbctemplatepractice.Users;
 
 
 public class UsersEntity {
-    int id;
-    String name;
-    String last_name;
-    int age;
-    String address;
-    String id_file_credential;
+    private int id;
+    private String name;
+    private String last_name;
+    private int age;
+    private String address;
+    private String id_file_credential;
 
     public UsersEntity(int id, String name, String last_name, int age, String address, String id_file_credential) {
         this.id = id;

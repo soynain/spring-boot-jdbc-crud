@@ -1,4 +1,4 @@
-package com.jdbctemplatepractice.Users;
+package com.jdbctemplatepractice.jdbctemplatepractice.Users;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
