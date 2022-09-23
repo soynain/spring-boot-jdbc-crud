@@ -9,8 +9,8 @@ more stuff.
 Some labels in the buttons are not visible because I'm just using a nested <a></a> tag for
 the redirects.
 
-I think the innovative stuff I want to implement here is Spring security JDBC for protecting the views
-with a session registry in the database
+The extra I ADDED HERE WAS the Spring Session JDBC for creating sessions in the 
+mysql database and protecting the routes of course.
 
 Pretty basic stuff, It's just that I'm slow programming things, and more slow when it's not new or fun.
 
